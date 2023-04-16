@@ -20,3 +20,13 @@ const SomeModel = require("../models/somemodel");
 
 // Use the SomeModel object (model) to find all SomeModel records
 SomeModel.find(callback_function);
+
+
+// Populate actual content of the associated document,
+Story.findOne({ title: "Bob goes sledding" })
+  .populate("author") // This populates the author id with actual author information!
+  .exec((err, story) => {
+    if (err) return handleError(err);
+    console.log("The author is %s", story.author.name);
+    // prints "The author is Bob Smith"
+  });
