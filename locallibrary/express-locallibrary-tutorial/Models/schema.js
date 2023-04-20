@@ -16,7 +16,7 @@ module.exports = mongoose.model("SomeModel", SomeModelSchema);
 
 //Use this in other files
 // Create a SomeModel model just by requiring the module
-const SomeModel = require("../models/somemodel");
+const SomeModel = require("./somemodel");
 
 // Use the SomeModel object (model) to find all SomeModel records
 SomeModel.find(callback_function);

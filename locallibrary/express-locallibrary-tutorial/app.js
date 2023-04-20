@@ -11,12 +11,13 @@ const app = express();
 
 // mongoose setup 
 // Import the mongoose module
+// Set up mongoose connection
 const mongoose = require("mongoose");
 
 mongoose.set('strictQuery', false);
 
 // Define the database URL to connect to.
-const mongoDB = "mongodb://127.0.0.1/my_database";
+const mongoDB = "mongodb+srv://khojinryu01:MRhjFbghwls$03160506;@cluster0.exv4lef.mongodb.net/local_library?retryWrites=true&w=majority";
 
 // Wait for database to connect, logging an error if there is a problem 
 main().catch(err => console.log(err));
@@ -57,5 +58,6 @@ app.use(function (err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
 
 module.exports = app;
